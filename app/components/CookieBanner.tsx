@@ -19,15 +19,22 @@ export default function CookieBanner() {
   return (
     <AnimatePresence>
       {show && (
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.4 }}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[600px]
-          bg-black/80 backdrop-blur-xl border border-white/10 shadow-2xl
-          rounded-2xl p-6 z-[999]"
-        >
+ <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: 40 }}
+  transition={{ duration: 0.4 }}
+  className="
+    fixed bottom-4 left-1/2 -translate-x-1/2 
+    w-[94%] sm:w-[90%] md:w-[600px]
+    max-h-[70vh] overflow-y-auto
+    bg-black/90 backdrop-blur-xl 
+    border border-white/10 shadow-2xl
+    rounded-2xl p-6 z-[999]
+  "
+  style={{ WebkitOverflowScrolling: "touch" }}
+>
+  
           {/* COOKIE ICON */}
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🍪</span>
