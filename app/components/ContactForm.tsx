@@ -24,11 +24,26 @@ export default function ContactForm() {
       className="glass p-6 rounded-2xl border border-white/10 shadow-xl
       hover:border-[#5DF0FF60] transition"
     >
-      {/* 🔐 ZOHO CRM HIDDEN FIELDS */}
-      <input type="hidden" name="xnQsjsdp" value="6946d958b86b211146dea805a52047b06a0b664e677cae41206bfb066f47a44f" />
-      <input type="hidden" name="xmIwtLD" value="0bb58374d9e874238181934a5e2d47108386c59d82b8a982167fbc0c4c4381a42b2f4a8ee10a6362fff9902bf31fe3b1" />
+
+      {/* ZOHO HIDDEN FIELDS */}
+      <input
+        type="hidden"
+        name="xnQsjsdp"
+        value="6946d958b86b211146dea805a52047b06a0b664e677cae41206bfb066f47a44f"
+      />
+      <input
+        type="hidden"
+        name="xmIwtLD"
+        value="0bb58374d9e874238181934a5e2d47108386c59d82b8a982167fbc0c4c4381a42b2f4a8ee10a6362fff9902bf31fe3b1"
+      />
       <input type="hidden" name="actionType" value="TGVhZHM=" />
-      <input type="hidden" name="returnURL" value="https://brevanext.com/thank-you" />
+      <input type="hidden" name="zc_gad" value="" />
+
+      <input
+        type="hidden"
+        name="returnURL"
+        value="https%3A%2F%2Fbrevanext.com%2Fthank-you"
+      />
 
       {/* TITLE */}
       <h3
@@ -39,7 +54,7 @@ export default function ContactForm() {
         Let's Connect
       </h3>
 
-      {/* NAME → Zoho Last Name */}
+      {/* NAME → ZOHO Last Name */}
       <div className="mb-4">
         <label className="text-sm text-gray-300">Name</label>
         <input
@@ -55,7 +70,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* EMAIL → Zoho Email */}
+      {/* EMAIL */}
       <div className="mb-4">
         <label className="text-sm text-gray-300">Email</label>
         <input
@@ -71,7 +86,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* MESSAGE → Zoho Description */}
+      {/* MESSAGE */}
       <div className="mb-5">
         <label className="text-sm text-gray-300">Message</label>
         <textarea
@@ -98,6 +113,7 @@ export default function ContactForm() {
       >
         Send Message
       </motion.button>
-    </motion.form>
+
+    </motion.form>  
   );
 }
