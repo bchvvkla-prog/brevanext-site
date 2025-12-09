@@ -25,22 +25,10 @@ export default function ContactForm() {
       hover:border-[#5DF0FF60] transition"
     >
       {/* 🔐 ZOHO CRM HIDDEN FIELDS */}
-      <input
-        type="hidden"
-        name="xnQsjsdp"
-        value="6a0b0b48ff8ee0f8f73ccdc60afe63044eccdc4a49aa664e5e19e30a088a6935"
-      />
-      <input
-        type="hidden"
-        name="xmIwtLD"
-        value="72ce2a07784aafb60cd1f9ea714519f1b463ce2536918cb5c2aca1621dc778f60061093c59210dd3bcfb481de25f0437"
-      />
+      <input type="hidden" name="xnQsjsdp" value="6946d958b86b211146dea805a52047b06a0b664e677cae41206bfb066f47a44f" />
+      <input type="hidden" name="xmIwtLD" value="0bb58374d9e874238181934a5e2d47108386c59d82b8a982167fbc0c4c4381a42b2f4a8ee10a6362fff9902bf31fe3b1" />
       <input type="hidden" name="actionType" value="TGVhZHM=" />
-      <input
-        type="hidden"
-        name="returnURL"
-        value="https://brevanext.com/thank-you"
-      />
+      <input type="hidden" name="returnURL" value="https://brevanext.com/thank-you" />
 
       {/* TITLE */}
       <h3
