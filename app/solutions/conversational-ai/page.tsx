@@ -1,26 +1,3 @@
-/* ===============================
-   PAGE-LEVEL SEO (SERVER)
-================================ */
-export const metadata = {
-  title: "Conversational AI & Virtual Assistant Development | BrevaNext",
-  description:
-    "BrevaNext builds conversational AI and virtual assistants that automate customer support, enable voice and chat interactions, and integrate with CRM systems.",
-  keywords: [
-    "conversational AI services",
-    "AI chatbot development company",
-    "virtual assistant development",
-    "AI voice assistants",
-    "enterprise AI chatbots",
-    "BrevaNext conversational AI"
-  ],
-  alternates: {
-    canonical: "https://www.brevanext.com/solutions/conversational-ai",
-  },
-};
-
-/* ===============================
-   CLIENT COMPONENT
-================================ */
 "use client";
 
 import { motion } from "framer-motion";

@@ -1,26 +1,3 @@
-/* ===============================
-   PAGE-LEVEL SEO (SERVER)
-================================ */
-export const metadata = {
-  title: "AI Process Automation Services for Businesses | BrevaNext",
-  description:
-    "BrevaNext provides AI process automation services to streamline workflows, eliminate manual tasks, and scale intelligent business operations using AI and RPA.",
-  keywords: [
-    "AI process automation services",
-    "business process automation",
-    "AI workflow automation",
-    "robotic process automation RPA",
-    "enterprise automation solutions",
-    "BrevaNext AI automation"
-  ],
-  alternates: {
-    canonical: "https://www.brevanext.com/solutions/ai-process-automation",
-  },
-};
-
-/* ===============================
-   CLIENT COMPONENT
-================================ */
 "use client";
 
 import { motion } from "framer-motion";
