@@ -1,3 +1,8 @@
+html, body {
+  -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,4 +47,12 @@ html, body {
 /* SERVICE CARD */
 .service-card {
   @apply glass p-6 rounded-xl transition transform hover:scale-[1.03] hover:border-cyan-400 cursor-pointer;
+}
+@media (max-width: 768px) {
+  iframe[title="BrevaNext AI Assistant"] {
+    width: 95% !important;
+    height: 90% !important;
+    right: 2.5% !important;
+    bottom: 5% !important;
+  }
 }
