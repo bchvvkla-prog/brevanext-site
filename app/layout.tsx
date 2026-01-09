@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CookieBanner from "./components/CookieBanner";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 export const metadata = {
   metadataBase: new URL("https://www.brevanext.com"),
@@ -23,7 +24,7 @@ export const metadata = {
     "Data analytics consulting",
     "Machine learning consulting",
     "Enterprise AI solutions",
-    "BrevaNext"
+    "BrevaNext",
   ],
 
   alternates: {
@@ -99,7 +100,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               },
               sameAs: [
                 "https://www.linkedin.com/company/brevanext",
-                "https://www.instagram.com/brevanext_ai"
+                "https://www.instagram.com/brevanext_ai",
               ],
             }),
           }}
@@ -131,6 +132,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+
+        {/* 🤖 BrevaNext AI Chatbot */}
+        <ChatbotWidget />
       </body>
     </html>
   );
