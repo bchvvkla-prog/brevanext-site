@@ -27,6 +27,11 @@ export const metadata = {
     "BrevaNext",
   ],
 
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+
   alternates: {
     canonical: "https://www.brevanext.com",
   },
@@ -99,8 +104,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 email: "admin@brevanext.com",
               },
               sameAs: [
-                "https://www.linkedin.com/company/brevanext",
-                "https://www.instagram.com/brevanext_ai",
+                "https://www.linkedin.com/company/brevanextai/",
+                "https://www.instagram.com/brevanext/",
               ],
             }),
           }}
