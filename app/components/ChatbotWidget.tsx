@@ -78,7 +78,7 @@ export default function ChatbotWidget() {
 
           {/* IFRAME */}
           <iframe
-            src="https://breva-next-chat-bot.vercel.app/"
+            src="https://breva-next-chat-bot.vercel.app/embed"
             title="BrevaNext AI Assistant"
             style={{
               width: "100%",
