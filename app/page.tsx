@@ -2,22 +2,20 @@
 
 import HomeHero from "./components/HomeHero";
 import AboutSection from "./components/AboutSection";
-import IndustriesSection from "./components/IndustriesSection";
-import HomeCaseStudies from "./components/case-studies";
+import Testimonials from "./components/Testimonials";
 import ChatbotWidget from "./components/ChatbotWidget";
 
 export default function Home() {
   return (
-    <main className="pt">
+    <main className="bg-[#0B0F1A]">
+
       <HomeHero />
       <AboutSection />
-      <IndustriesSection />
-
-      {/* ⭐ CASE STUDIES SECTION */}
-      <HomeCaseStudies />
+      <Testimonials />
 
       {/* 🤖 CHATBOT */}
       <ChatbotWidget />
+
     </main>
   );
 }

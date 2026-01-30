@@ -2,14 +2,19 @@ export const metadata = {
   title: "Privacy Policy – BrevaNext",
   description: "Learn how BrevaNext collects, protects, and uses your personal data.",
 };
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen py-20 px-6 bg-black text-gray-300">
-      
+
       {/* PAGE TITLE */}
-      <h1 className="text-4xl font-bold mb-10 text-center 
-        bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)] 
-        bg-clip-text text-transparent">
+      <h1
+        className="
+          text-4xl font-bold mb-10 text-center
+          bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
+          bg-clip-text text-transparent
+        "
+      >
         Privacy Policy — BrevaNext
       </h1>
 
@@ -17,7 +22,7 @@ export default function PrivacyPolicy() {
 
         {/* EFFECTIVE DATE */}
         <p className="text-gray-400 italic">
-          Effective Date: November 2025 • Last Updated: November 2025
+          Effective Date: January 2026 • Last Updated: January 2026
         </p>
 
         {/* SECTION 1 */}
@@ -27,17 +32,25 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            We may collect personal information such as your name, email address,
-            phone number, company details, and any message you submit through our
-            contact forms. We also collect usage data including IP address,
-            browser type, device information, and pages visited to improve user
-            experience.
+            BrevaNext may collect personal information that you voluntarily
+            provide when interacting with our website or services. We also
+            collect limited technical data to improve performance, security,
+            and user experience.
           </p>
 
           <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li><strong>Personal Information:</strong> Name, email, phone number, company, message content.</li>
-            <li><strong>Usage Data:</strong> IP, device type, browser information, pages visited.</li>
-            <li><strong>Cookies:</strong> Used for analytics, personalization, and improving performance.</li>
+            <li>
+              <strong>Personal Information:</strong> Name, email address, phone
+              number, company name, and message content submitted through forms.
+            </li>
+            <li>
+              <strong>Usage Data:</strong> IP address, browser type, device
+              information, operating system, and pages visited.
+            </li>
+            <li>
+              <strong>Cookies:</strong> Used for analytics, personalization, and
+              essential site functionality.
+            </li>
           </ul>
         </section>
 
@@ -48,17 +61,17 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            BrevaNext uses your information to deliver services, respond to
-            inquiries, send updates, improve website performance, maintain
-            security, and comply with legal obligations.
+            We use collected information to operate our business, deliver
+            services, communicate with users, and continuously improve our
+            offerings.
           </p>
 
           <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li>Provide and improve AI & automation services</li>
-            <li>Respond to inquiries and customer support requests</li>
-            <li>Send marketing or service-related communications (opt-in only)</li>
-            <li>Analyze trends and website performance</li>
-            <li>Maintain service security and prevent fraud</li>
+            <li>Provide and improve AI, automation, and consulting services</li>
+            <li>Respond to inquiries and support requests</li>
+            <li>Send service-related or marketing communications (opt-in only)</li>
+            <li>Monitor usage patterns and website performance</li>
+            <li>Maintain security, prevent abuse, and detect fraud</li>
           </ul>
         </section>
 
@@ -69,10 +82,15 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            We do not sell or rent your personal information. Data may be shared
-            only with trusted partners such as hosting providers, analytics tools,
-            or platforms that assist in service delivery. All partners follow strict
-            confidentiality and data protection standards.
+            BrevaNext does not sell, rent, or trade your personal information.
+            We may share limited data with trusted third-party service providers
+            such as hosting, analytics, or communication platforms strictly for
+            operational purposes.
+          </p>
+
+          <p className="mt-3">
+            All third parties are contractually required to follow appropriate
+            confidentiality, security, and data protection standards.
           </p>
         </section>
 
@@ -83,9 +101,9 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            We implement robust technical and organizational measures including
-            encryption, access controls, secure hosting, and regular monitoring to
-            safeguard your information.
+            We implement reasonable administrative, technical, and
+            organizational safeguards including encryption, access controls,
+            secure hosting environments, and monitoring to protect your data.
           </p>
         </section>
 
@@ -96,27 +114,30 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            Depending on your region (GDPR/CCPA), you may request access,
-            correction, deletion, or export of your personal data. You may also opt
-            out of marketing at any time.
+            Depending on your jurisdiction (including GDPR and CCPA), you may
+            have the right to access, correct, delete, restrict, or export your
+            personal data. You may also withdraw consent for marketing
+            communications at any time.
           </p>
 
           <p className="mt-3">
-            To exercise your rights, contact us at:{" "}
-            <span className="text-white font-semibold">admin@brevanext.com</span>
+            Requests can be submitted to:{" "}
+            <span className="text-white font-semibold">
+              admin@brevanext.com
+            </span>
           </p>
         </section>
 
         {/* SECTION 6 */}
         <section>
           <h2 className="text-2xl font-semibold text-white mb-3">
-            6. Cookies & Tracking
+            6. Cookies & Tracking Technologies
           </h2>
 
           <p>
-            Cookies help us enhance website performance and personalize your
-            experience. You may disable cookies in your browser settings, though
-            some features may not function properly.
+            Cookies help us understand site usage, improve performance, and
+            personalize experiences. You may manage or disable cookies through
+            your browser settings, though some features may be affected.
           </p>
         </section>
 
@@ -127,8 +148,9 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            Our website may include links to third-party sites. BrevaNext is not
-            responsible for the content or privacy practices of external websites.
+            Our website may contain links to external sites not operated by
+            BrevaNext. We are not responsible for the content, policies, or
+            practices of third-party websites.
           </p>
         </section>
 
@@ -139,21 +161,23 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            We retain your information only as long as necessary for service
-            delivery, legal compliance, and legitimate business operations. When no
-            longer required, your data is securely deleted.
+            We retain personal information only for as long as necessary to
+            fulfill service purposes, comply with legal obligations, and
+            support legitimate business operations. Data is securely deleted
+            when no longer required.
           </p>
         </section>
 
         {/* SECTION 9 */}
         <section>
           <h2 className="text-2xl font-semibold text-white mb-3">
-            9. Children's Privacy
+            9. Children’s Privacy
           </h2>
 
           <p>
-            Our services are not intended for individuals under 16. We do not knowingly
-            collect data from minors. If such data is identified, it is promptly removed.
+            BrevaNext does not knowingly collect personal data from individuals
+            under the age of 16. If such data is identified, it will be deleted
+            promptly.
           </p>
         </section>
 
@@ -164,8 +188,8 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            We may update this Privacy Policy periodically. Changes will be reflected
-            on this page with an updated revision date.
+            This Privacy Policy may be updated periodically. Any changes will
+            be posted on this page with an updated effective date.
           </p>
         </section>
 
@@ -176,7 +200,7 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            For any questions, concerns, or privacy-related requests, you can reach us at:
+            For privacy-related questions or requests, please contact us at:
           </p>
 
           <ul className="mt-3 space-y-1">
@@ -193,9 +217,9 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p>
-            © 2025 BrevaNext. All Rights Reserved. All content on this website,
-            including text, graphics, logos, and design, is the exclusive property
-            of BrevaNext and protected under international copyright laws.
+            © 2026 BrevaNext. All Rights Reserved. All content on this website,
+            including text, graphics, logos, and design, is the exclusive
+            property of BrevaNext and protected under applicable copyright laws.
           </p>
         </section>
 

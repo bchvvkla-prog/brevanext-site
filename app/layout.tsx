@@ -14,16 +14,15 @@ export const metadata = {
   },
 
   description:
-    "BrevaNext helps businesses automate workflows, build AI chatbots, and deploy data-driven solutions using AI, machine learning, and analytics.",
+    "BrevaNext helps businesses automate workflows, build AI-powered systems, and design decision platforms that reduce manual work and improve operational clarity.",
 
   keywords: [
     "AI automation consulting",
     "AI process automation services",
-    "AI chatbot development company",
-    "Generative AI solutions",
+    "Business automation company",
+    "AI advisory services",
+    "Custom AI systems",
     "Data analytics consulting",
-    "Machine learning consulting",
-    "Enterprise AI solutions",
     "BrevaNext",
   ],
 
@@ -37,9 +36,9 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "AI Automation & Intelligence Consulting | BrevaNext",
+    title: "AI Automation & Systems Advisory | BrevaNext",
     description:
-      "BrevaNext delivers AI automation, chatbots, analytics, and machine learning solutions for modern businesses.",
+      "BrevaNext partners with businesses to automate operations and build custom AI systems that support better decisions.",
     url: "https://www.brevanext.com",
     siteName: "BrevaNext",
     images: [
@@ -56,9 +55,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AI Automation & Analytics Consulting | BrevaNext",
+    title: "AI Automation & Systems Advisory | BrevaNext",
     description:
-      "Scale faster with AI-powered automation, chatbots, analytics, and machine learning solutions.",
+      "Designing intelligent automation and decision systems for growing businesses.",
     images: ["/og-image.png"],
   },
 
@@ -90,7 +89,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               url: "https://www.brevanext.com",
               logo: "https://www.brevanext.com/logo.png",
               description:
-                "BrevaNext delivers AI automation, analytics, chatbots, and enterprise intelligence solutions.",
+                "BrevaNext designs AI-powered automation and custom systems that reduce manual work and improve business decisions.",
               email: "admin@brevanext.com",
               address: {
                 "@type": "PostalAddress",
@@ -120,11 +119,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@type": "WebSite",
               name: "BrevaNext",
               url: "https://www.brevanext.com",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://www.brevanext.com/?q={search_term}",
-                "query-input": "required name=search_term",
-              },
             }),
           }}
         />
@@ -132,13 +126,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
+      {/* ✅ FIXED OVERLAY NAVBAR (CONTENT SLIDES UNDER) */}
       <body className="bg-black text-white antialiased">
         <Navbar />
-        <main>{children}</main>
+
+        {/* ❌ NO padding-top here */}
+        <main className="relative z-0">
+          {children}
+        </main>
+
         <Footer />
         <CookieBanner />
-
-        {/* 🤖 BrevaNext AI Chatbot */}
         <ChatbotWidget />
       </body>
     </html>

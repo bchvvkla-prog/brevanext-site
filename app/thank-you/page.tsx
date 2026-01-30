@@ -1,123 +1,50 @@
-"use client";
+import Link from "next/link";
+import PrimaryHeading from "@/app/components/PrimaryHeading";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+export const metadata = {
+  title: "Thank You – BrevaNext",
+  description: "Thanks for contacting BrevaNext. We'll be in touch shortly.",
+};
 
-export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handleChange = (e: any) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
+export default function ThankYouPage() {
   return (
-    <motion.form
-      action="https://formsubmit.co/admin@brevanext.com"
-      method="POST"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="glass p-6 rounded-2xl border border-white/10 shadow-xl
-      hover:border-[#5DF0FF60] transition"
-    >
-      {/* Hidden settings */}
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
+    <main className="min-h-screen bg-[#0B0F1A] text-white flex items-center justify-center px-6">
+      <div className="max-w-xl w-full text-center bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-10">
 
-      {/* Autoresponse Message */}
-      <input
-        type="hidden"
-        name="_autoresponse"
-        value={`Thank you for reaching out to BrevaNext!
-Your message has been received, and our team is already reviewing it with care.
-You’ll hear from us very soon — we’re truly excited to connect with you and support your journey into AI-powered transformation.
+        <PrimaryHeading
+          as="h1"
+          className="
+            bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
+            bg-clip-text text-transparent
+          "
+        >
+          Thank you!
+        </PrimaryHeading>
 
-If you need immediate assistance, feel free to reply directly to this email.
-We’re here for you.
+        <p className="mt-4 text-white/80 leading-relaxed">
+          Your message has been received successfully.  
+          Our team will review it and get back to you shortly.
+        </p>
 
-Warm regards,
-Team BrevaNext`}
-      />
+        <div className="mt-8 flex justify-center gap-4">
+          <Link
+            href="/"
+            className="px-5 py-2.5 rounded-lg text-sm font-semibold
+              bg-white/10 hover:bg-white/20 transition"
+          >
+            Back to Home
+          </Link>
 
-      <input
-        type="hidden"
-        name="_subject"
-        value="New BrevaNext Contact Form Submission"
-      />
-
-      <input
-        type="hidden"
-        name="_next"
-        value="https://brevanext.com/thank-you"
-      />
-
-      {/* TITLE */}
-      <h3
-        className="text-2xl font-bold mb-5 
-        bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-        bg-clip-text text-transparent"
-      >
-        Let's Connect
-      </h3>
-
-      {/* NAME */}
-      <div className="mb-4">
-        <label className="text-sm text-gray-300">Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your full name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full mt-1 px-4 py-2.5 bg-black/20 border border-white/10 
-          rounded-md text-white text-sm 
-          focus:outline-none focus:border-[#5DF0FF] transition"
-          required
-        />
+          <Link
+            href="/case-studies"
+            className="px-5 py-2.5 rounded-lg text-sm font-semibold
+              bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
+              text-white hover:opacity-90 transition"
+          >
+            View Case Studies
+          </Link>
+        </div>
       </div>
-
-      {/* EMAIL */}
-      <div className="mb-4">
-        <label className="text-sm text-gray-300">Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email address"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full mt-1 px-4 py-2.5 bg-black/20 border border-white/10 
-          rounded-md text-white text-sm 
-          focus:outline-none focus:border-[#3FA9F5] transition"
-          required
-        />
-      </div>
-
-      {/* MESSAGE */}
-      <div className="mb-5">
-        <label className="text-sm text-gray-300">Message</label>
-        <textarea
-          name="message"
-          placeholder="Tell us how we can help..."
-          rows={4}
-          value={form.message}
-          onChange={handleChange}
-          className="w-full mt-1 px-4 py-2.5 bg-black/20 border border-white/10 
-          rounded-md text-white text-sm resize-none 
-          focus:outline-none focus:border-[#9A5CF5] transition"
-          required
-        />
-      </div>
-
-      {/* BUTTON */}
-      <motion.button
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        type="submit"
-        className="w-full py-3 font-semibold rounded-lg 
-        bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-        text-black hover:opacity-90 transition shadow-lg"
-      >
-        Send Message
-      </motion.button>
-    </motion.form>
+    </main>
   );
 }

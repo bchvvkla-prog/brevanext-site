@@ -11,7 +11,7 @@ export default function CookiePolicy() {
           Cookie Policy
         </h1>
 
-        <p className="text-gray-400">Effective Date: November 2025</p>
+        <p className="text-gray-400">Effective Date: January 2026</p>
 
         {/* 1. What Are Cookies */}
         <section>

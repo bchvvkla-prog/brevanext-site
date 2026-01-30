@@ -11,7 +11,7 @@ export default function TermsPage() {
           Terms & Conditions
         </h1>
 
-        <p>Effective Date: November 2025</p>
+        <p>Effective Date: January 2026</p>
 
         <section>
           <h2 className="text-2xl font-bold text-white mb-3">1. Introduction</h2>

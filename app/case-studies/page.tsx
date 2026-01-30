@@ -1,86 +1,85 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import PrimaryHeading from "@/app/components/PrimaryHeading";
 
 const caseStudies = [
   {
+    slug: "laquinta-operating-performance",
+    category: "Hospitality Analytics",
+    title: "LaQuinta Monthly Operating Performance Dashboard",
+    description:
+      "Replaced spreadsheet-based P&L reporting with an executive-ready dashboard for real-time operational insight.",
+  },
+  {
     slug: "ai-process-automation",
-    title: "AI Process Automation",
-    summary:
-      "Automation of workflows, reports, and operations to eliminate manual effort and accelerate productivity.",
-    gradient: "from-[#5DF0FF] to-[#3FA9F5]",
+    category: "AI & Process Automation",
+    title: "AI automation for manufacturing operations",
+    description:
+      "Automated manual workflows to improve visibility, reduce errors, and scale operations.",
   },
   {
     slug: "conversational-ai",
-    title: "Conversational AI & Virtual Assistants",
-    summary:
-      "Smart chatbots and AI assistants that enhance customer experience and reduce support workload.",
-    gradient: "from-[#3FA9F5] to-[#9A5CF5]",
+    category: "Conversational AI",
+    title: "AI assistants for patient communication",
+    description:
+      "Deployed AI assistants to reduce support load and improve patient experience.",
   },
   {
     slug: "data-analytics-bi",
-    title: "Data Analytics & Business Intelligence",
-    summary:
-      "Real-time dashboards, automated ETL, and predictive analytics for data-driven decisions.",
-    gradient: "from-[#9A5CF5] to-[#FF4FD8]",
+    category: "Data Analytics & BI",
+    title: "Executive dashboards for real-time decision-making",
+    description:
+      "Replaced delayed reporting with real-time analytics and forecasting.",
   },
   {
     slug: "social-media-ai",
-    title: "Social Media AI Automation",
-    summary:
-      "AI-powered content generation, auto scheduling, and DM automation to grow brand engagement.",
-    gradient: "from-[#FF4FD8] to-[#5DF0FF]",
+    category: "AI Marketing Automation",
+    title: "Automating content and engagement for D2C brands",
+    description:
+      "Scaled content creation and engagement without increasing manual effort.",
   },
 ];
 
 export default function CaseStudiesPage() {
   return (
-    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl md:text-6xl font-extrabold mb-10 
-          bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-          bg-clip-text text-transparent text-center"
-      >
-        Case Studies
-      </motion.h1>
+    <main className="bg-[#0B0F1A] text-white">
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <PrimaryHeading>Case Studies</PrimaryHeading>
 
-      <p className="text-gray-400 text-center max-w-2xl mx-auto mb-14">
-        Real-world examples of how BrevaNext delivers automation, intelligence, and measurable
-        business impact across industries.
-      </p>
+        <p className="mt-6 max-w-3xl text-white/70">
+          Real-world examples of how BrevaNext helps organizations automate
+          operations, gain clarity from data, and deploy AI systems at scale.
+        </p>
 
-      {/* GRID */}
-      <div className="grid md:grid-cols-2 gap-10">
-        {caseStudies.map((cs, index) => (
-          <motion.div
-            key={cs.slug}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
-            className="bg-black/40 border border-white/10 p-8 rounded-2xl shadow-lg hover:border-[#5DF0FF60] transition"
-          >
-            <h2
-              className={`text-2xl font-bold bg-gradient-to-r ${cs.gradient} 
-                bg-clip-text text-transparent`}
-            >
-              {cs.title}
-            </h2>
-
-            <p className="text-gray-400 mt-4 text-sm leading-relaxed">{cs.summary}</p>
-
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {caseStudies.map((cs) => (
             <Link
+              key={cs.slug}
               href={`/case-studies/${cs.slug}`}
-              className="mt-5 inline-block text-cyan-300 hover:text-cyan-400 transition font-medium"
+              className="group rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition"
             >
-              View Full Case Study →
+
+              <div className="p-6">
+                <p className="text-sm text-white/60 mb-2">
+                  {cs.category}
+                </p>
+
+                <h3 className="text-lg font-semibold">
+                  {cs.title}
+                </h3>
+
+                <p className="mt-3 text-white/70 text-sm leading-relaxed">
+                  {cs.description}
+                </p>
+
+                <p className="mt-4 text-sm text-cyan-300 font-medium">
+                  View case study →
+                </p>
+              </div>
             </Link>
-          </motion.div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
