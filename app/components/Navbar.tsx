@@ -1,126 +1,185 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+      if (industriesRef.current && !industriesRef.current.contains(event.target as Node)) {
+        setIndustriesOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ willChange: "transform, opacity" }}
+    <header
       className="
-        fixed top-0 left-0 w-full z-50
-        bg-black/50 backdrop-blur-lg md:backdrop-blur-xl border-b border-white/10
+        fixed top-0 left-0 w-full
+        z-[9999]
+        bg-[#0B0F1A]/70
+        backdrop-blur-xl
+        border-b border-white/10
       "
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        {/* LOGO + BRAND NAME */}
-        <a href="/" className="flex items-center gap-6">
-
-          {/* Logo */}
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/services/BrevaNext_logo.png"
-            alt="BrevaNext Logo"
-            width={40}
-            height={40}
-            className="object-contain scale-[1.85] translate-y-[3.5px]"
+            src="/logo.png"
+            alt="BrevaNext logo"
+            width={36}
+            height={36}
+             style={{ height: "auto", width: "auto" }}
+            priority
           />
-
-          {/* BRAND NAME */}
           <span
             className="
-              text-2xl font-extrabold tracking-wide
+              text-2xl md:text-3xl font-extrabold tracking-tight
               bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
               bg-clip-text text-transparent
             "
           >
             BrevaNext
           </span>
-        </a>
+        </Link>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-8 text-gray-300 font-medium text-sm">
-          <a
-            href="/#about"
-            className="
-              hover:text-transparent 
-              hover:bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-              hover:bg-clip-text transition
-            "
-          >
+        {/* NAV */}
+        <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/90">
+
+          {/* SERVICES */}
+          <div className="relative" ref={servicesRef}>
+            <button
+              onClick={() => {
+                setServicesOpen(v => !v);
+                setIndustriesOpen(false);
+              }}
+              className="hover:text-white transition"
+            >
+              Services ▾
+            </button>
+
+            {servicesOpen && (
+              <div className="
+                absolute top-12 left-0 w-80
+                rounded-xl
+                bg-[#0F172A]/95
+                backdrop-blur-xl
+                border border-white/10
+                shadow-2xl
+                p-4
+              ">
+                {[
+                  ["AI & Process Automation", "/services/ai-automation"],
+                  ["Business Intelligence & Dashboards", "/services/business-intelligence"],
+                  ["Custom Web & Internal Tools", "/services/custom-web-tools"],
+                  ["AI Advisory & Implementation", "/services/ai-advisory"],
+                  ["Staffing & Consulting", "/services/staffing-consulting"],
+                ].map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setServicesOpen(false)}
+                    className="
+                      block px-3 py-2 rounded-lg
+                      hover:bg-white/5
+                      hover:text-white
+                      transition
+                    "
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* INDUSTRIES */}
+          <div className="relative" ref={industriesRef}>
+            <button
+              onClick={() => {
+                setIndustriesOpen(v => !v);
+                setServicesOpen(false);
+              }}
+              className="hover:text-white transition"
+            >
+              Industries ▾
+            </button>
+
+            {industriesOpen && (
+              <div className="
+                absolute top-12 left-0 w-80
+                rounded-xl
+                bg-[#0F172A]/95
+                backdrop-blur-xl
+                border border-white/10
+                shadow-2xl
+                p-4
+              ">
+                {[
+                  ["Healthcare", "/industry/healthcare"],
+                  ["Manufacturing & Operations", "/industry/manufacturing"],
+                  ["Finance & Banking", "/industry/finance"],
+                  ["Retail & E-Commerce", "/industry/retail"],
+                  ["Logistics & Supply Chain", "/industry/logistics"],
+                  ["Education & EdTech", "/industry/education"],
+                  ["HR & Talent Operations", "/industry/hr"],
+                  ["Media, Marketing & Agencies", "/industry/media-marketing"],
+                ].map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setIndustriesOpen(false)}
+                    className="
+                      block px-3 py-2 rounded-lg
+                      hover:bg-white/5
+                      hover:text-white
+                      transition
+                    "
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link href="/case-studies" className="hover:text-white transition">
+            Case Studies
+          </Link>
+
+          <Link href="/#about" className="hover:text-white transition">
             About
-          </a>
+          </Link>
+        </nav>
 
-          <a
-            href="/solutions"
-            className="
-              hover:text-transparent 
-              hover:bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-              hover:bg-clip-text transition
-            "
-          >
-            Solutions
-          </a>
-
-          <a
-            href="/#industries"
-            className="
-              hover:text-transparent 
-              hover:bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-              hover:bg-clip-text transition
-            "
-          >
-            Industries
-          </a>
-
-          <a
-            href="#footer-contact"
-            className="
-              hover:text-transparent 
-              hover:bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-              hover:bg-clip-text transition
-            "
-          >
-            Contact
-          </a>
-
-          <a
-            href="/careers"
-            className="
-              hover:text-transparent 
-              hover:bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-              hover:bg-clip-text transition
-            "
-          >
-            Careers
-          </a>
-        </div>
-
-        {/* MOBILE MENU BUTTON */}
-        <button
-          className="md:hidden text-gray-300 text-2xl"
-          onClick={() => setOpen(!open)}
+        {/* CTA */}
+        <Link
+          href="/contact"
+          className="
+            hidden md:inline-flex px-6 py-3 rounded-lg
+            text-sm font-semibold text-white
+            bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
+            hover:opacity-90 transition
+          "
         >
-          ☰
-        </button>
+          Contact Us
+        </Link>
       </div>
-
-      {/* MOBILE MENU */}
-      {open && (
-        <div className="md:hidden bg-black/90 border-t border-white/10 px-6 pb-4 space-y-1">
-          <a href="/#about" className="block py-2 border-b border-white/10">About</a>
-          <a href="/solutions" className="block py-2 border-b border-white/10">Solutions</a>
-          <a href="/#industries" className="block py-2 border-b border-white/10">Industries</a>
-          <a href="#footer-contact" className="block py-2 border-b border-white/10">Contact</a>
-          <a href="/careers" className="block py-2">Careers</a>
-        </div>
-      )}
-    </motion.nav>
+    </header>
   );
 }

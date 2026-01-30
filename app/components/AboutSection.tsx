@@ -6,129 +6,124 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 px-6 max-w-7xl mx-auto text-gray-300"
+      className="bg-[#0B0F1A] py-24 px-6"
     >
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
 
-        {/* LEFT CONTENT */}
+        {/* LEFT — CORE NARRATIVE */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         >
           <h2
-            className="text-4xl md:text-5xl font-extrabold mb-6 
-            bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
-            bg-clip-text text-transparent"
+            className="
+              text-4xl md:text-5xl font-extrabold mb-6
+              bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5,#9A5CF5,#FF4FD8)]
+              bg-clip-text text-transparent
+            "
           >
             About BrevaNext
           </h2>
 
-          <p className="text-lg text-gray-400 leading-relaxed mb-8">
-            BrevaNext is an AI-native automation company helping organizations 
-            modernize operations, scale intelligently, and unlock extraordinary 
-            efficiency. We engineer intelligent systems that automate work, 
-            enhance decision-making, and accelerate growth across industries.
+          <p className="text-white/80 text-lg leading-relaxed max-w-xl">
+            BrevaNext is an AI-native automation and intelligence firm that helps
+            organizations modernize operations, reduce complexity, and scale
+            with confidence.
           </p>
 
-          <div className="space-y-6">
-
-            {/* MISSION */}
-            <div className="border-l-4 border-[#5DF0FF] pl-4">
-              <h3 className="text-xl font-semibold
-              bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5)]
-              bg-clip-text text-transparent">
-                Our Mission
-              </h3>
-              <p className="text-gray-400 mt-2">
-                To make AI-powered automation accessible, scalable, and 
-                business-changing—empowering teams to do more with less effort.
-              </p>
-            </div>
-
-            {/* VISION */}
-            <div className="border-l-4 border-[#9A5CF5] pl-4">
-              <h3 className="text-xl font-semibold
-              bg-[linear-gradient(to_right,#3FA9F5,#9A5CF5)]
-              bg-clip-text text-transparent">
-                Our Vision
-              </h3>
-              <p className="text-gray-400 mt-2">
-                To build a future where companies run on intelligent workflows, 
-                real-time insights, and automation systems that continually learn 
-                and improve.
-              </p>
-            </div>
-
-            {/* WHY CHOOSE US */}
-            <div className="border-l-4 border-[#FF4FD8] pl-4">
-              <h3 className="text-xl font-semibold
-              bg-[linear-gradient(to_right,#9A5CF5,#FF4FD8)]
-              bg-clip-text text-transparent">
-                Why Choose Us
-              </h3>
-              <p className="text-gray-400 mt-2">
-                We combine deep technical expertise with business strategy—creating 
-                automation solutions that reduce cost, eliminate inefficiency, and 
-                deliver measurable ROI.
-              </p>
-            </div>
-
+          {/* VALUE POINTS */}
+          <div className="mt-10 space-y-6 max-w-xl">
+            {[
+              [
+                "AI-first execution",
+                "We design automation and intelligence systems built around real workflows — not demos or experiments."
+              ],
+              [
+                "Business-aligned engineering",
+                "Every solution is tied to operational goals, measurable outcomes, and long-term scalability."
+              ],
+              [
+                "End-to-end ownership",
+                "From strategy to implementation, we stay accountable for real business impact."
+              ],
+            ].map(([title, desc]) => (
+              <div
+                key={title}
+                className="border-l-2 border-white/15 pl-4"
+              >
+                <p className="text-white font-semibold mb-1">
+                  {title}
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {desc}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.div>
 
-        {/* RIGHT — Softer Glow Orb + Global Impact */}
+        {/* RIGHT — STRATEGIC BLOCKS */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative flex items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="space-y-8"
         >
 
-          {/* Soft Floating Orb */}
-          <motion.div
-            animate={{
-              y: [0, -15, 0],
-              scale: [1, 1.03, 1]
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="
-              w-[280px] h-[280px] md:w-[360px] md:h-[360px]
-              rounded-full blur-2xl opacity-40
-              bg-[radial-gradient(circle,#4BDFF0,#4C90F2,#7E4CEF,#E842C7)]
-              absolute
-            "
-          />
-
-          {/* Foreground Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="
-              relative z-10 p-10 rounded-3xl backdrop-blur-xl
-              border border-white/10 bg-white/5 shadow-[0_0_20px_#5DF0FF15]
-              max-w-sm text-center
-            "
-          >
+          {/* MISSION */}
+          <div className="rounded-xl p-6 bg-white/5 border border-white/10 backdrop-blur">
             <h3
-              className="text-3xl font-bold mb-4
-                bg-[linear-gradient(to_right,#5DF0FF,#9A5CF5,#FF4FD8)]
-                bg-clip-text text-transparent"
+              className="
+                text-xl font-semibold mb-2
+                bg-[linear-gradient(to_right,#5DF0FF,#3FA9F5)]
+                bg-clip-text text-transparent
+              "
             >
-              Global Impact
+              Our Mission
             </h3>
-
-            <p className="text-gray-300 leading-relaxed">
-              From Phoenix to worldwide operations, BrevaNext helps enterprises, 
-              fast-growth startups, and global teams build intelligent automation 
-              ecosystems that scale across borders.
+            <p className="text-white/70 text-sm leading-relaxed">
+              Make AI-powered automation accessible, scalable, and genuinely
+              business-changing — enabling teams to do more with less effort.
             </p>
-          </motion.div>
+          </div>
+
+          {/* VISION */}
+          <div className="rounded-xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+            <h3
+              className="
+                text-xl font-semibold mb-2
+                bg-[linear-gradient(to_right,#3FA9F5,#9A5CF5)]
+                bg-clip-text text-transparent
+              "
+            >
+              Our Vision
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              A future where organizations run on intelligent workflows,
+              real-time insights, and systems that continuously learn and adapt.
+            </p>
+          </div>
+
+          {/* WHY BREVA NEXT */}
+          <div className="rounded-xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+            <h3
+              className="
+                text-xl font-semibold mb-2
+                bg-[linear-gradient(to_right,#9A5CF5,#FF4FD8)]
+                bg-clip-text text-transparent
+              "
+            >
+              Why BrevaNext
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              We combine deep technical expertise with operational and strategic
+              thinking — delivering automation systems that reduce cost,
+              eliminate inefficiency, and produce measurable ROI.
+            </p>
+          </div>
 
         </motion.div>
 
