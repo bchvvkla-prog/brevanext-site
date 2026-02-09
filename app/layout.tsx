@@ -5,6 +5,12 @@ import Footer from "./components/Footer";
 import CookieBanner from "./components/CookieBanner";
 import ChatbotWidget from "./components/ChatbotWidget";
 
+/* ✅ NEW — Correct Next.js viewport export */
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata = {
   metadataBase: new URL("https://www.brevanext.com"),
 
@@ -126,12 +132,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
-      {/* ✅ FIXED OVERLAY NAVBAR (CONTENT SLIDES UNDER) */}
       <body className="bg-black text-white antialiased">
         <Navbar />
 
-        {/* ❌ NO padding-top here */}
-        <main className="relative z-0">
+        {/* Prevent hero hiding under fixed navbar */}
+        <main className="relative z-0 pt-20">
           {children}
         </main>
 

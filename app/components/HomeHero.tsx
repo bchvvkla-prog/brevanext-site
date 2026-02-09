@@ -2,14 +2,14 @@ import PrimaryHeading from "./PrimaryHeading";
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full h-[520px] md:h-[640px] bg-[#0B0F1A] overflow-hidden">
+    <section className="relative w-full bg-[#0B0F1A] overflow-hidden py-20 md:py-0 md:min-h-[640px]">
 
       {/* Subtle depth layer */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1F2937,transparent_60%)]" />
 
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="max-w-6xl mx-auto px-6 text-center text-white">
+      <div className="relative z-10 flex md:items-center justify-center px-4 md:min-h-[640px]">
+        <div className="max-w-6xl mx-auto text-center text-white">
 
           {/* Primary Heading */}
           <PrimaryHeading
@@ -24,37 +24,43 @@ export default function HomeHero() {
           </PrimaryHeading>
 
           {/* Supporting copy */}
-          <p className="mt-8 text-lg md:text-xl text-white/80">
+          <p className="mt-6 text-sm sm:text-base md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             BrevaNext partners with growing companies to design custom AI
             automations, internal tools, and decision systems that reduce manual
             work and support better business outcomes.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-sm mx-auto">
 
             {/* Primary CTA */}
             <a
               href="/contact"
               className="
-                inline-flex px-7 py-3 rounded-lg font-semibold
+                inline-flex items-center justify-center
+                px-6 py-3 rounded-lg font-semibold
                 bg-white text-black
                 hover:bg-gray-100 transition
+                w-full sm:w-auto whitespace-nowrap
               "
             >
-              Contact Us
+              <span className="sm:hidden">Contact</span>
+              <span className="hidden sm:inline">Contact Us</span>
             </a>
 
             {/* Secondary CTA */}
             <a
               href="/services"
               className="
-                inline-flex px-7 py-3 rounded-lg font-semibold
+                inline-flex items-center justify-center
+                px-6 py-3 rounded-lg font-semibold
                 border border-white/30 text-white
                 hover:bg-white/10 transition
+                w-full sm:w-auto whitespace-nowrap
               "
             >
-              Explore Services
+              <span className="sm:hidden">Services</span>
+              <span className="hidden sm:inline">Explore Services</span>
             </a>
 
           </div>
