@@ -113,6 +113,42 @@ const caseStudies = [
       role: 'Managing Director, CreativeForce',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
     }
+  },
+  {
+    emoji: '🏨',
+    industry: 'Hospitality',
+    title: 'LaQuinta Manager Gained Full Financial Visibility with an Automated Operations Dashboard',
+    timeframe: 'Deployed in 2 weeks',
+    challenge: 'A LaQuinta property manager overseeing a 70-unit hotel was piecing together monthly performance data manually — pulling numbers from multiple systems, building reports by hand, and spending hours every month just to understand how the property was performing. There was no single source of truth, no real-time visibility, and no early warning system for cost overruns.',
+    solution: 'BrevaNext built a fully automated monthly operating performance dashboard that aggregates revenue, expenses, labor, and NOI data in real time. The system calculates key hospitality metrics automatically — occupancy rate, ADR, RevPAR, NOI margin, and a proprietary Owner Health Index — giving the manager instant clarity on property performance without touching a spreadsheet.',
+    metrics: [
+      { value: '99.7', label: 'Owner Health Score' },
+      { value: '83%', label: 'NOI Margin' },
+      { value: '97.1%', label: 'Occupancy Rate' },
+      { value: '0 hrs', label: 'Manual Reporting Time' }
+    ],
+    flow: [
+      { icon: '📥', label: 'Data Ingestion', description: 'Revenue, expense, labor, and occupancy data flows automatically from the property management system into the dashboard on a scheduled refresh cycle.' },
+      { icon: '📊', label: 'KPI Calculation', description: 'The system automatically computes ADR ($100.11), RevPAR ($97.25), occupancy % (97.1%), NOI ($175,365.90), and 15+ other hospitality benchmarks.' },
+      { icon: '🧠', label: 'Health Scoring', description: 'A proprietary Owner Health Index (0–100) evaluates margin strength, cost discipline, and operational efficiency — giving an instant performance grade.' },
+      { icon: '⚠️', label: 'Cost Monitoring', description: 'Per-occupied-room cost targets for service, laundry, and breakfast are tracked against actuals, with variance alerts when costs drift above benchmarks.' },
+      { icon: '📄', label: 'Executive Summary', description: 'An AI-generated Executive Operating Summary highlights key wins, flags risks, and surfaces actionable observations — automatically, every reporting period.' },
+      { icon: '📤', label: 'PDF Export', description: 'One-click PDF export generates a branded, investor-ready report with full P&L flow, revenue mix, labor breakdown, and escrow summary.' }
+    ],
+    implementation: [
+      { phase: 'PMS & Data Source Integration', detail: 'Connected property management system, accounting software, and payroll data into a unified reporting pipeline.' },
+      { phase: 'KPI Engine Build', detail: 'Built automated calculation layer for ADR, RevPAR, occupancy %, NOI margin, RevPAR index, and 10+ derived metrics.' },
+      { phase: 'Owner Health Index Model', detail: 'Developed proprietary scoring algorithm weighing NOI margin, cost ratios, occupancy, and pricing efficiency into a single 0–100 score.' },
+      { phase: 'Cost Benchmarking System', detail: 'Configured per-occupied-room cost targets with real-time variance tracking and color-coded efficiency indicators.' },
+      { phase: 'AI Executive Summary', detail: 'Automated natural language summary generation that interprets the numbers and surfaces observations in plain English each reporting cycle.' },
+      { phase: 'PDF Export & Scheduling', detail: 'Built branded one-click PDF export and optional automated report delivery to owners and stakeholders on a monthly schedule.' }
+    ],
+    testimonial: {
+      quote: "I used to spend hours pulling this data together every month. Now I open the dashboard and everything is already there — occupancy, NOI, cost breakdowns, all of it. It even tells me what\'s going well and what to watch.",
+      name: 'Hetal Bhakta',
+      role: 'Hotel Operations Manager, LaQuinta',
+      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face'
+    }
   }
 ];
 

@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Services", page: "Services" },
   { name: "Solutions", page: "Solutions" },
   { name: "Industries", page: "Industries" },
+  { name: "Case Studies", page: "CaseStudies" },
   { name: "About", page: "About" },
   { name: "Contact", page: "Contact" },
 ];
@@ -175,6 +176,7 @@ export default function Layout({ children, currentPageName }) {
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-3 text-sm">
                 <li><Link to={createPageUrl("About")} className="text-gray-400 hover:text-cyan-400 transition-colors">About Us</Link></li>
+                <li><Link to={createPageUrl("CaseStudies")} className="text-gray-400 hover:text-cyan-400 transition-colors">Case Studies</Link></li>
                 <li><Link to={createPageUrl("Industries")} className="text-gray-400 hover:text-cyan-400 transition-colors">Industries</Link></li>
                 <li><Link to={createPageUrl("Solutions")} className="text-gray-400 hover:text-cyan-400 transition-colors">Solutions</Link></li>
                 <li><Link to={createPageUrl("Contact")} className="text-gray-400 hover:text-cyan-400 transition-colors">Contact</Link></li>

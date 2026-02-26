@@ -4,6 +4,7 @@ import Solutions from './pages/Solutions';
 import Industries from './pages/Industries';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import CaseStudies from './pages/CaseStudies';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
@@ -17,6 +18,7 @@ export const PAGES = {
     "Industries": Industries,
     "About": About,
     "Contact": Contact,
+    "CaseStudies": CaseStudies,
     "TermsOfService": TermsOfService,
     "PrivacyPolicy": PrivacyPolicy,
     "CookiePolicy": CookiePolicy,

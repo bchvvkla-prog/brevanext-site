@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">10. Contact Us</h2>
-            <p>For any privacy-related questions or requests, please contact us at <a href="mailto:hello@brevanext.com" className="text-cyan-400 hover:underline">hello@brevanext.com</a>.</p>
+            <p>For any privacy-related questions or requests, please contact us at <a href="mailto:admin@brevanext.com" className="text-cyan-400 hover:underline">admin@brevanext.com</a>.</p>
           </section>
         </div>
       </div>
